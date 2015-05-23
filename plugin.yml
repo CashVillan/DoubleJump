@@ -1,0 +1,9 @@
+name: DoubleJump
+author: CashVillan
+main: me.cashvillan.doublejump.Main
+version: 1.0
+description: A advanced Double Jump plugin by CashVillan!
+
+commands:
+  doublejump:
+    description: Manage DoubleJump plugin.
