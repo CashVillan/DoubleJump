@@ -47,7 +47,6 @@ public class Commands implements CommandExecutor {
 						}
 						if (isInteger(args2) == true) {
 							FileManager.setValue("power", args2);
-							p.setVelocity(p.getLocation().getDirection().multiply(Float.parseFloat((String) FileManager.getValue("power"))).setY(Float.parseFloat((String) FileManager.getValue("height"))));
 							p.sendMessage(ChatColor.GREEN + "Power set to '" + args2 + "'.");
 							return true;
 						}

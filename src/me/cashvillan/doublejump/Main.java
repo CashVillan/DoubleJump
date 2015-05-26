@@ -1,11 +1,11 @@
 package me.cashvillan.doublejump;
 
-import org.bukkit.Bukkit;
-import org.bukkit.event.Listener;
+import java.io.File;
+
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin implements Listener {
+public class Main extends JavaPlugin {
 	
 	static Main plugin;
 	private final Listeners Listeners = new Listeners();
@@ -15,11 +15,10 @@ public class Main extends JavaPlugin implements Listener {
 		registerCommands();
 		registerEvents();
 		
+		if (!new File(this.getDataFolder() + "config.yml").exists()) saveDefaultConfig(); else saveConfig();
 		saveDefaultConfig();
 		saveConfig();
 		FileManager.loadConfig();
-		
-		Bukkit.getServer().getPluginManager().registerEvents(this, this);
 	}
 	
 	public void registerEvents() {
